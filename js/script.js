@@ -46,3 +46,22 @@ $('.catalog-item__btn').each(function(i) {
 		$('.overlay, #buy').fadeIn('fast');
 	});
 });
+
+$('#buy form').validate({
+	rules: {
+		name: "required",
+		phone: "required",
+		email: {
+			required: true,
+			email: true
+		}
+	},
+	messages: {
+		name: "Пожалуйста, введите своё имя",
+		phone: "Пожалуйста, введите свой телефон",
+		email: {
+			required: "Нам нужна Ваша электронная почта для связи",
+			email: "Ваш электронный адрес должен быть формата name@domain.com"
+		}
+	}
+});

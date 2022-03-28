@@ -59,6 +59,7 @@ body {
 	box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.6);
 }
 
+
 .catalog__tab div {
 	transform: skewX(25deg);
 }
@@ -79,6 +80,8 @@ body {
 .catalog__content.active {
 	display: flex;
 }
+
+
 
 .catalog-item {
 	width: 300px;
@@ -106,7 +109,7 @@ body {
 
 .catalog-item__subtitle {
 	text-align: center;
-	margin-top: 20px;
+	margin-top: 12px;
 	font-size: 16px;
 	font-weight: 700;
 	line-height: 25px;
@@ -146,6 +149,9 @@ body {
 	font-weight: 500;
 	line-height: 22px;
 	border: none;
+	border-radius: 5px;
+	font-family: 'Oswald';
+	text-transform: uppercase;
 }
 
 .catalog-item__old-price {
@@ -247,7 +253,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	background-color: #dadada;
-
+	border-radius: 5px;
 }
 
 .modal__subtitle {
