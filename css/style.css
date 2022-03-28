@@ -1,3 +1,7 @@
+:root {
+--red-primary: #C70101;
+}
+
 a {
 	text-decoration: none;
 }
@@ -11,7 +15,7 @@ li {
 html,
 body {
 	height: 100%;
-	font-family: 'ubuntu';
+	font-family: 'Oswald';
 }
 
 [class*="__container"] {
@@ -60,7 +64,7 @@ body {
 }
 
 .catalog__tab.active {
-	background-color: #C70101;
+	background-color: var(--red-primary);
 	color: white;
 	border: none;
 }
@@ -136,7 +140,7 @@ body {
 	cursor: pointer;
 	height: 44px;
 	width: 135px;
-	background: #C70101;
+	background: var(--red-primary);
 	color: white;
 	font-size: 14px;
 	font-weight: 500;
@@ -198,7 +202,7 @@ body {
 	position: absolute;
 	width: 5px;
 	height: 5px;
-	background-color: #C70101;
+	background-color: var(--red-primary);
 	left: -14px;
 	top: 7px;
 }
@@ -214,8 +218,97 @@ body {
 	left: 55%;
 	transform: translateX(calc(-50% - 19px));
 	display: block;
-	color: #C70101;
+	color: var(--red-primary);
 	font-size: 14px;
 	font-weight: 500;
 	text-transform: uppercase;
+}
+
+
+.overlay {
+	display: none;
+	top: 0;
+	left: 0;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	min-height: 425px;
+	width: 382px;
+	text-align: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	background-color: #dadada;
+
+}
+
+.modal__subtitle {
+	text-transform: uppercase;
+	font-size: 19px;
+	font-weight: 700;
+	line-height: 19px;
+	padding: 35px 0 0 0;
+}
+
+.modal__descr {
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 14px;
+	padding: 10px 0 26px 0;
+}
+
+
+.feed-form input {
+	margin: 10px 0;
+	height: 53px;
+	width: 251px;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 66px;
+	border-radius: 5px;
+	border: none;
+	padding-left: 21px;
+}
+
+.feed-form button {
+	text-transform: uppercase;
+	font-family: 'Oswald';
+	height: 48px;
+	width: 125px;
+	background-color: var(--red-primary);
+	color: white;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 16px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-top: 12px;
+}
+
+.modal__close {
+	position: absolute;
+	top: -15px;
+	right: -25px;
+	font-size: 41px;
+	line-height: 41px;
+	color:var(--red-primary);
+	cursor: pointer;
+}
+
+#buy, #thanks {
+	display: none;
+}
+
+.modal.mini {
+	min-height: 120px;
 }

@@ -33,3 +33,16 @@ function toggleSlide(item) {
 
 toggleSlide('.catalog-item__link');
 toggleSlide('.catalog-item__back');
+
+//Modal 
+
+$('.modal__close').on('click', function() {
+	$('.overlay, #buy').fadeOut('fast');
+});
+
+$('.catalog-item__btn').each(function(i) {
+	$(this).on('click', function() {
+		$('#buy .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
+		$('.overlay, #buy').fadeIn('fast');
+	});
+});
