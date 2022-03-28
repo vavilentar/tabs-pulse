@@ -1,3 +1,5 @@
+$(document).ready(function(){
+
 $('ul.catalog__tabs').on('click', 'li:not(.active)', function () {
 	$(this)
 		.addClass('active').siblings().removeClass('active')
@@ -47,21 +49,37 @@ $('.catalog-item__btn').each(function(i) {
 	});
 });
 
-$('#buy form').validate({
-	rules: {
-		name: "required",
-		phone: "required",
-		email: {
-			required: true,
-			email: true
-		}
-	},
-	messages: {
-		name: "Пожалуйста, введите своё имя",
-		phone: "Пожалуйста, введите свой телефон",
-		email: {
-			required: "Нам нужна Ваша электронная почта для связи",
-			email: "Ваш электронный адрес должен быть формата name@domain.com"
-		}
-	}
-});
+function validateForms(form){
+	$(form).validate({
+	    rules: {
+		   name: {
+			  required: true,
+			  minlength: 2
+		   },
+		   phone: "required",
+		   email: {
+			  required: true,
+			  email: true
+		   }
+	    },
+	    messages: {
+		   name: {
+			  required: "Пожалуйста, введите свое имя",
+			  minlength: jQuery.validator.format("Введите {0} символа!")
+			},
+		   phone: "Пожалуйста, введите свой номер телефона",
+		   email: {
+			required: "Пожалуйста, введите свою почту",
+			email: "Неправильно введен адрес почты"
+		   }
+	    }
+	});
+ };
+
+ validateForms('#buy form');
+
+
+// $('input[name=phone]').mask("+7 (999) 999-99-99");
+$('input[name=phone]').mask("+7 (999) 999-99-99");
+
+})
